@@ -19,7 +19,12 @@ public class ExecutavelListaDinamicaSemComentarios {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Não foi possivel buscar as disciplinas");
+			for(int pos = 0; pos <= e.getStackTrace().length; pos++) {
+				JOptionPane.showMessageDialog(null, "Linha do erro: "+ e.getStackTrace()[pos].getLineNumber()
+						+"\n"+"Metodo do erro: "+ e.getStackTrace()[pos].getMethodName()
+						+"\n"+"Classe do erro: "+e.getStackTrace()[pos].getClassName());
+			}
+			JOptionPane.showMessageDialog(null, "Não foi possivel salvar a disciplina e a nota. CAUSA: " + e.getMessage());
 		}
 	}
 }

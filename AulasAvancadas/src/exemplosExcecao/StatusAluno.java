@@ -1,4 +1,4 @@
-package constantes;
+package exemplosExcecao;
 
 public class StatusAluno {
 public static String APROVADO = "Aprovado";
