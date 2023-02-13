@@ -10,7 +10,9 @@ public class ExemploCatchsMultiplos {
 	public static void main(String[] args) {
 		try {
 			Aluno aluno = new Aluno();
-			File fil = new File("Files.txt");
+			File fil = new File("c://Files.txt");
+			//caso queira efetuar um teste, só criar um arquivo Files.txt no c:/
+			//fara com que o programa continue rodando sem erros
 			Scanner imagemScanner = new Scanner(fil);
 			String sexString = JOptionPane.showInputDialog("Selecione o sexo do aluno (M/F):");
 			aluno.setSexo(sexString);
@@ -38,7 +40,11 @@ public class ExemploCatchsMultiplos {
 			JOptionPane.showMessageDialog(null, saidaBuilder.toString()); 
 			}catch(NullPointerException e) {
 			JOptionPane.showMessageDialog(null, "Não foi possivel salvar os dados - CAUSA: " + e.getMessage());
-		}catch(FileNotFoundException e) {
+		}catch(FileNotFoundException e) 
+		//aqui, poderia ser um exception simples, porem não seria tratado
+		//o mais correto para que se haja um entendimento do que causou o problema é utilizar
+		//tratamento nas exceções
+		{
 			JOptionPane.showMessageDialog(null, "Não foi possivel encontrar a imagem - CAUSA: " + e.getMessage());
 		}
 	}
