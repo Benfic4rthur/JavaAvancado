@@ -29,12 +29,15 @@ public class ExecutavelListaDinamicaSemComentarios {
 				JOptionPane.showMessageDialog(null, "Não foi possivel salvar a disciplina e a nota. CAUSA: "+e.getMessage()
 													+"\n"+ "Linha do erro: "+ e.getStackTrace()[pos].getLineNumber()
 													+"\n"+"Metodo do erro: "+ e.getStackTrace()[pos].getMethodName()
-													+"\n"+"Classe do erro: "+e.getStackTrace()[pos].getClassName());
+													+"\n"+"Classe do erro: "+e.getStackTrace()[pos].getClassName()
+													+"\n"+"Classe de erro: "+e.getClass().getName());
+													
 			//adiciona os erros ao saidaBuilder para que sejam chamados em uma futura impressão	
 			saidaBuilder.append("Não foi possivel salvar a disciplina e a nota. CAUSA: "+e.getMessage());
 			saidaBuilder.append("\n Linha do erro: "+ e.getStackTrace()[pos].getLineNumber());
 			saidaBuilder.append("\n Metodo do erro: "+ e.getStackTrace()[pos].getMethodName());
 			saidaBuilder.append("\n Classe do erro: "+e.getStackTrace()[pos].getClassName());
+			saidaBuilder.append("\n Classe de erro: "+e.getClass().getName());
 			
 			}
 			//imprime os erros adicionados ao saidaBuilder, este jeito é um pouco mais elaborado
