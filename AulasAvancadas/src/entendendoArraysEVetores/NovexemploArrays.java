@@ -2,12 +2,10 @@ package entendendoArraysEVetores;
 
 import javax.swing.JOptionPane;
 
-import org.omg.IOP.ExceptionDetailMessage;
-
 public class NovexemploArrays {
 	public static void main(String[] args) {
-		/* Array pode ser de todos os tipos de dados e objetos tambem */
-		// array sempre deve ter uma quantidade de posições estipulada
+		/*Array pode ser de todos os tipos de dados e objetos tambem */
+		//array sempre deve ter uma quantidade de posições estipulada
 
 		String posicoes = JOptionPane.showInputDialog("Quantas posições nosso array vai ter?");
 		double notas[] = new double[Integer.parseInt(posicoes)];
@@ -16,7 +14,7 @@ public class NovexemploArrays {
 			String valor = JOptionPane.showInputDialog("Digite a " + (pos + 1) + "ª nota:");
 			notas[pos] = Double.valueOf(valor);
 		}
-		// essa variavel que fará o papel de somar as notas, sempre precisa ser criada fora do for
+		//essa variavel que fará o papel de somar as notas, sempre precisa ser criada fora do for
 		double somanotas = 0.0;
 		//esse for vai imprimir as notas e a media
 		for (int pos = 0; pos < notas.length; pos++) {

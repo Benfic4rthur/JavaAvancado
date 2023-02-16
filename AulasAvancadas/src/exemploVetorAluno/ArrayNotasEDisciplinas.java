@@ -2,7 +2,7 @@ package exemploVetorAluno;
 
 public class ArrayNotasEDisciplinas {
 	public static void main(String[] args) {
-		
+		//este exemplo não possui dinamismo algum
 		//criamos o aluno
 		Aluno aluno = new Aluno();
 		aluno.setSexo("M");

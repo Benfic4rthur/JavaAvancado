@@ -24,10 +24,11 @@ public class ArrayVetores {
 		 * System.out.print("nota 4: "+notas[3]);
 		 */
 		// forma de impressão dos dados do array dinamicamente
-		// notas.lenght pega o tamanho de dados do array, para que o for seja dinamico e
-		// sem dados informados manualmente pelo dev
 		// o (pos+1) é utilizado pois a primeira posição inicialmente é zero, mas para
 		// ficar de acordo é utilizado o +1 para subir uma posição
+		// notas.lenght pega o tamanho de dados do array, para que o for seja dinamico e
+		// sem dados informados manualmente pelo dev
+
 		for (int pos = 0; pos < notas.length; pos++) {
 			System.out.println("nota " + (pos + 1) + ": " + notas[pos]);
 		}
