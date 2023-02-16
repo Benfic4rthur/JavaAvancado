@@ -4,7 +4,7 @@ package exemploVetorAluno; // declaração do pacote que o codigo faz parte
 
 import javax.swing.JOptionPane; // importação da classe JOptionPane
 
-public class ExceptionComTratamentoComentado { // classe ExceptionComTratamento
+public class ArrayComExceptionSemNotaNegativa { // classe ExceptionComTratamento
 	public static void main(String[] args) { // método main
 		Aluno aluno = new Aluno(); // instancia um objeto aluno
 		aluno.setNome("Arthur Benfica"); // seta o nome do aluno
@@ -27,9 +27,14 @@ public class ExceptionComTratamentoComentado { // classe ExceptionComTratamento
 						try { // bloco try/catch para tratar erros
 							String valor = JOptionPane.showInputDialog( // pede para o usuário a nota
 									"Digite a " + (posi + 1) + "ª nota de " + disciplina.getDisciplina());
-							notas[posi] = Double.parseDouble(valor); 
-							// converte a string para double e armazena no vetor
-							validInput = true; // muda o valor da variavel booleana para sair do loop interno
+							double nota = Double.parseDouble(valor);
+							if (nota < 0) { //cria um if que informa um erro de nota menor que 0
+								JOptionPane.showMessageDialog(null, "A nota deve ser maior ou igual a zero.", "Erro",
+										JOptionPane.ERROR_MESSAGE);
+							} else {
+								notas[posi] = nota;
+								validInput = true; // muda o valor da variavel booleana para sair do loop interno
+							}
 						} catch (NumberFormatException e) { // caso o usuário digite uma string em vez de um double
 							int opcao = JOptionPane.showConfirmDialog(null, "Valor inválido! Deseja tentar novamente?",
 									"Erro", JOptionPane.YES_NO_OPTION); // pede ao usuário se deseja tentar novamente
@@ -39,20 +44,17 @@ public class ExceptionComTratamentoComentado { // classe ExceptionComTratamento
 						}
 					}
 				}
-				disciplina.setNota(notas); // seta o vetor de notas na classe Disciplinas
-				aluno.getDisciplinas().add(disciplina); 
-				// adiciona o objeto disciplina no vetor de disciplinas da classe Aluno
+				disciplina.setNota(notas);
+				aluno.getDisciplinas().add(disciplina);
 			}
 
-			saida = saida + "nome do aluno: " + aluno.getNome() + "\n"; 
-			// adiciona ao que será mostrado para o usuário o nome do aluno
-			saida = saida + "---------DISCIPLINAS DO ALUNO----------" + "\n"; 
-			// adiciona ao que será mostrado para o usuário o titulo
+			saida = saida + "nome do aluno: " + aluno.getNome() + "\n";
+			saida = saida + "---------DISCIPLINAS DO ALUNO----------" + "\n";
 
 			for (Disciplinas d : aluno.getDisciplinas()) { // loop para percorrer o vetor de disciplinas da classe Aluno
 
 				saida = saida + "\n"; // adiciona uma quebra de linha no que será mostrado para o usuário
-				saida = saida + "Disciplina: " + d.getDisciplina() + "\n"; 
+				saida = saida + "Disciplina: " + d.getDisciplina() + "\n";
 				// adiciona ao que será mostrado para o usuário o nome da disciplina
 
 				double somanotas = 0.0; // cria uma variavel para armazenar a soma das notas
@@ -60,14 +62,14 @@ public class ExceptionComTratamentoComentado { // classe ExceptionComTratamento
 				double notaminima = 0.0; // cria uma variavel para armazenar a nota minima
 				for (int pos = 0; pos < d.getNota().length; pos++) { // loop para percorrer o vetor de notas da
 																		// disciplina
-					saida = saida + "Nota " + (pos + 1) + ": " + d.getNota()[pos] + "\n"; 
+					saida = saida + "Nota " + (pos + 1) + ": " + d.getNota()[pos] + "\n";
 					// adiciona ao que será mostrado para o usuário a nota
 					somanotas += d.getNota()[pos]; // soma todas as notas
 					double media = somanotas / d.getNota().length; // calcula a média das notas
 					// notas.length - 1 faz com que a média seja impressa sempre após o ultimo
 					// elemento do for
 					if (pos == d.getNota().length - 1) { // caso a posição seja a ultima
-						saida = saida + "A média das notas é: " + String.format("%.2f", media) + "\n"; 
+						saida = saida + "A média das notas é: " + String.format("%.2f", media) + "\n";
 						// adiciona ao que será mostrado para o usuário a média
 					}
 					if (pos == 0) { // caso a posição seja a primeira execução
