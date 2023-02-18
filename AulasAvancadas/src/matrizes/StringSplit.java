@@ -13,8 +13,7 @@ public class StringSplit {
 	 List<String> list = Arrays.asList(valoresArray);
 	 for (String Valorstring : list) {
 		System.out.println(Valorstring);
-	}
-	 
+	 }
 	 //convertendo uma lista para um Array             ↓ aqui ele busca o length do valoresArray
 	 String[] conversaoArray = list.toArray(new String[valoresArray.length]);
 	 for(int pos = 0; pos < conversaoArray.length; pos++) {
