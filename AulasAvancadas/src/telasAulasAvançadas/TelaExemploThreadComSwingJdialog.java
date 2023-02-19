@@ -135,6 +135,7 @@ public class TelaExemploThreadComSwingJdialog extends JDialog {
 				thread2Time = new Thread(thread2); // instancia a thread2
 				thread2Time.start(); //starta a thread2
 				jButton2.setEnabled(true); // reabilita o botão stop ao clicar em start
+				jButton.setEnabled(false);
 			}
 		});
 		
@@ -147,6 +148,8 @@ public class TelaExemploThreadComSwingJdialog extends JDialog {
 				// TODO Auto-generated method stub
 				thread1Time.stop(); //stopa a thread
 				thread2Time.stop(); //stopa a thread2
+				jButton2.setEnabled(false);
+				jButton.setEnabled(true);
 
 			}
 		});
