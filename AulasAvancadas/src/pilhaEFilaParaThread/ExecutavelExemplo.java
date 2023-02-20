@@ -1,10 +1,10 @@
 package pilhaEFilaParaThread;
 
-import telasAulasAvançadas.TelaPilhaFila;
+import telasAulasAvançadas.ExemploTela;
 
-public class ExemploPilhaFila {
+public class ExecutavelExemplo {
 	public static void main(String[] args) {
 		//↓ este objeto instanciado chama a tela que foi criada.
-		TelaPilhaFila tela = new TelaPilhaFila();
+		ExemploTela tela = new ExemploTela();
 	}
 }
