@@ -1,6 +1,5 @@
 package trabalhandoComDatas;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -28,5 +27,6 @@ public class NovaApiDataHoraJava8 {
 		
 		//ofPattern = para o padrão
 		System.out.println("Primeiro teste formatação: "+dataHoraAtuaLocalDateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss.ms")));
+		
 	}
 }

@@ -17,7 +17,7 @@ public class ExemploGeraParcelaMensal {
 		calendar.setTime(dataInicial); //seta a dataInicial
 		
 		for (int parcela = 1; parcela <= 12; parcela++) {
-			calendar.add(calendar.MONTH, 1); //pega a data inserida no calendar e insere um mes a cara repetição do for
+			calendar.add(Calendar.MONTH, 1); //pega a data inserida no calendar e insere um mes a cara repetição do for
 			//é utilizado o .add(calendar.month, 1) para adicionar o mês
 			System.out.println("Parcela de numero " + parcela + " vencimento é em " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
 		}	

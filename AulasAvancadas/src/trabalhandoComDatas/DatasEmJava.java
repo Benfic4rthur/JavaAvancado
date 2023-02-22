@@ -2,10 +2,9 @@ package trabalhandoComDatas;
 
 import java.util.Date;
 
-import javax.tools.Diagnostic;
-
 public class DatasEmJava {
 	
+@SuppressWarnings("deprecation")
 public static void main(String[] args) {
 	Date dataDate = new Date(); // cria um objeto data com a data atual
 	int mes = dataDate.getMonth();
