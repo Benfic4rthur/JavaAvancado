@@ -2,8 +2,6 @@ package TrabalhandoComArquivos;
 
 import java.util.Objects;
 
-import trabalhandoComDatas.DatasEmJava;
-
 public class ArquivoPessoas {
 	
 	private String nomeString;
