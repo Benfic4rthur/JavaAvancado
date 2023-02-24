@@ -66,12 +66,25 @@ public class ApachePoi {
 			Period periodo3 = Period.between(dataNasceu3, hoje3);
 			Integer idade3 = periodo3.getYears();
 			pessoa1.setIdade(idade3);
+			
+			/* PESSOA 4 */
+			ArquivoPessoas pessoa4 = new ArquivoPessoas();
+			pessoa4.setNomeString("Jade Benfica");
+			pessoa4.setEmailString("jade@email.com");
+			pessoa4.setDataDeNascimentoString("15/10/2017");
+			DateTimeFormatter formatter4 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate dataNasceu4 = LocalDate.parse(pessoa2.getDataDeNascimentoString(), formatter4);
+			LocalDate hoje4 = LocalDate.now();
+			Period periodo4 = Period.between(dataNasceu4, hoje4);
+			Integer idade4 = periodo4.getYears();
+			pessoa1.setIdade(idade4);
 
 			ArrayList<ArquivoPessoas> pessoas = new ArrayList<ArquivoPessoas>(); // lista de pessoas
 			pessoas.add(pessoa1); // adiciona o objeto pessoa1 a lista
 			pessoas.add(pessoa2); // adiciona o objeto pessoa2 a lista
 			pessoas.add(pessoa3); // adiciona o objeto pessoa3 a lista
-
+			pessoas.add(pessoa4); // adiciona o objeto pessoa4 a lista
+			
 			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(); // vai ser usado para escrever a planilha
 			HSSFSheet linhasPessoa = hssfWorkbook.createSheet("Planilha de pessoas"); // criar a planilha
 			int numerolinha = 0; // cria um numero de linha baseado em 0
