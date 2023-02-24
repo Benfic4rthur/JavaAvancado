@@ -26,7 +26,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.DayOfWeek;
 
-public class ExemploTela extends JDialog {
+public class CalculadoraDiasUteis extends JDialog {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -137,7 +137,7 @@ public class ExemploTela extends JDialog {
 	    });
 	}
 	private Thread thread1Time;
-	public ExemploTela() {
+	public CalculadoraDiasUteis() {
 		setTitle("calculadora dias uteis");
 		setSize(new Dimension(240, 300)); 
 		setLocationRelativeTo(null);

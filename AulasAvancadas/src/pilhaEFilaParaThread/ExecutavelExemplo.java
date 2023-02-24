@@ -1,10 +1,10 @@
 package pilhaEFilaParaThread;
 
-import telasAulasAvançadas.ExemploTela;
+import telasAulasAvançadas.CalculadoraDiasUteis;
 
 public class ExecutavelExemplo {
 	public static void main(String[] args) {
 		//↓ este objeto instanciado chama a tela que foi criada.
-		ExemploTela tela = new ExemploTela();
+		CalculadoraDiasUteis tela = new CalculadoraDiasUteis();
 	}
 }
