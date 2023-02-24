@@ -1,6 +1,6 @@
 package aprendendoThreads;
 
-import telasAulasAvançadas.TelaExemploThreadComSwingJdialog;
+import telasAulasAvancadas.TelaExemploThreadComSwingJdialog;
 
 public class ExemploThreadComSwingJdialog {
 	public static void main(String[] args) {

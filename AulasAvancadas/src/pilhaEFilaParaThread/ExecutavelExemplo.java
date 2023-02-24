@@ -1,6 +1,6 @@
 package pilhaEFilaParaThread;
 
-import telasAulasAvançadas.CalculadoraDiasUteis;
+import telasAulasAvancadas.CalculadoraDiasUteis;
 
 public class ExecutavelExemplo {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package telasAulasAvançadas;
+package telasAulasAvancadas;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

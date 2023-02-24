@@ -1,6 +1,6 @@
 package pilhaEFilaParaThread;
 
-import telasAulasAvançadas.TelaPilhaFila;
+import telasAulasAvancadas.TelaPilhaFila;
 
 public class ExemploPilhaFila {
 	public static void main(String[] args) {

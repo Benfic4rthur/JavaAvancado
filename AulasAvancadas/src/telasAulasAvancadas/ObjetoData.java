@@ -1,4 +1,4 @@
-package telasAulasAvançadas;
+package telasAulasAvancadas;
 
 import java.util.Objects;
 

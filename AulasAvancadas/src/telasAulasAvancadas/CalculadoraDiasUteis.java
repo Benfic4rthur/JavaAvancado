@@ -1,4 +1,4 @@
-package telasAulasAvançadas;
+package telasAulasAvancadas;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -15,6 +15,8 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -28,8 +30,9 @@ import java.time.DayOfWeek;
 
 public class CalculadoraDiasUteis extends JDialog {
 	
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private JPanel jpanel = new JPanel(new GridBagLayout());
 	private JLabel descricaoHora = new JLabel("Data atual:"); 
 	private JLabel dataEscolhidaJLabel = new JLabel("Digite a data:");
@@ -37,7 +40,8 @@ public class CalculadoraDiasUteis extends JDialog {
 	private JTextField mostraTempo = new JTextField();
 	private JTextField dataEscolhidaField = new JTextField();
 	private JTextField mostraDataCalculada = new JTextField();
-	private JButton jButton = new JButton("Calcular")	; 
+	private JButton jButton = new JButton("Calcular");
+	
 	private Runnable thread1 = new Runnable() {
 		@Override
 		public void run() {
@@ -107,6 +111,11 @@ public class CalculadoraDiasUteis extends JDialog {
 	};
 	
 	public void init() {
+		 // Carrega a imagem do ícone
+        ImageIcon icon = new ImageIcon(getClass().getResource("C:\\Users\\Arthur Benfica\\git\\AulasAvancadas\\AulasAvancadas\\src\\telasAulasAvancadas\\icone.png"));
+
+        // Define o ícone da janela
+        setIconImage(icon.getImage());
 		jpanel.add(descricaoHora, new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
 		jpanel.add(mostraTempo, new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
 		jpanel.add(dataEscolhidaJLabel, new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(5, 5, 5, 5), 0, 0));
@@ -138,66 +147,68 @@ public class CalculadoraDiasUteis extends JDialog {
 	}
 	private Thread thread1Time;
 	public CalculadoraDiasUteis() {
-		setTitle("calculadora dias uteis");
-		setSize(new Dimension(240, 300)); 
-		setLocationRelativeTo(null);
-		setResizable(false);
-		GridBagConstraints gridBagConstraints = new GridBagConstraints();
-		gridBagConstraints.gridx = 0; 
-		gridBagConstraints.gridy = 0;
-		gridBagConstraints.gridwidth = 2; 
-		gridBagConstraints.insets = new Insets(5, 10, 5, 5); 
-		gridBagConstraints.anchor = GridBagConstraints.WEST; 
-		descricaoHora.setPreferredSize(new Dimension(200, 25)); 
-		jpanel.add(descricaoHora, gridBagConstraints); 
-		mostraTempo.setPreferredSize(new Dimension(200, 25));
-		gridBagConstraints.gridy++; 
-		mostraTempo.setText(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime()));
-		mostraTempo.setEditable(false);
-		jpanel.add(mostraTempo, gridBagConstraints);
-		gridBagConstraints.gridy++; 
-		dataEscolhidaJLabel.setPreferredSize(new Dimension(200, 25)); 
-		jpanel.add(dataEscolhidaJLabel, gridBagConstraints); 
-		dataEscolhidaField.setPreferredSize(new Dimension(200, 25));
-		dataEscolhidaField.addFocusListener(focusAdapter);
-		gridBagConstraints.gridy++; 
-		jpanel.add(dataEscolhidaField, gridBagConstraints);
-		gridBagConstraints.gridy++; 
-		dataCalculadaJLabel.setPreferredSize(new Dimension(200, 25)); 
-		jpanel.add(dataCalculadaJLabel, gridBagConstraints); 
-		mostraDataCalculada.setPreferredSize(new Dimension(200, 25));
-		gridBagConstraints.gridy++; 
-		mostraDataCalculada.setEditable(false);
-		jpanel.add(mostraDataCalculada, gridBagConstraints);
-		gridBagConstraints.gridy++; 
-		gridBagConstraints.gridwidth = 1;
-		jButton.addActionListener(acaoBotao);
-		jButton.setPreferredSize(new Dimension(92, 25)); 
-		gridBagConstraints.gridy++; 
-		jpanel.add(jButton, gridBagConstraints); 
-		jButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) { 
-				thread1Time = new Thread(thread1); 
-				thread1Time.start(); 
-				try {
-					if (dataEscolhidaField.getText().trim().isEmpty()) {
-				    JOptionPane.showMessageDialog(jpanel, "Data não informada", "Erro", JOptionPane.ERROR_MESSAGE);
-				    return;
-					}
-		            String datasemformatacao = dataEscolhidaField.getText();
-		            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		            dateFormat.setLenient(false);
-		            Date dataEscolhida = dateFormat.parse(datasemformatacao);
-		            String dataFormatada = dateFormat.format(dataEscolhida);
-		            dataEscolhidaField.setText(dataFormatada);
-		        } catch (ParseException ex) {
-		            JOptionPane.showMessageDialog(jpanel, "Data inválida", "Erro", JOptionPane.ERROR_MESSAGE);
-		        }
-		    }			
-		});
-		
-		add(jpanel, BorderLayout.WEST);
-		setVisible(true);
+	    setTitle("calculadora dias uteis");
+	    setSize(new Dimension(240, 300));
+	    setLocationRelativeTo(null);
+	    setResizable(false);
+	    ImageIcon icon = new ImageIcon("C:\\Users\\Arthur Benfica\\git\\AulasAvancadas\\AulasAvancadas\\src\\telasAulasAvancadas\\icone.png");
+	    setIconImage(icon.getImage());
+	    GridBagConstraints gridBagConstraints = new GridBagConstraints();
+	    gridBagConstraints.gridx = 0;
+	    gridBagConstraints.gridy = 0;
+	    gridBagConstraints.gridwidth = 2;
+	    gridBagConstraints.insets = new Insets(5, 10, 5, 5);
+	    gridBagConstraints.anchor = GridBagConstraints.WEST;
+	    descricaoHora.setPreferredSize(new Dimension(200, 25));
+	    jpanel.add(descricaoHora, gridBagConstraints);
+	    mostraTempo.setPreferredSize(new Dimension(200, 25));
+	    gridBagConstraints.gridy++;
+	    mostraTempo.setText(new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime()));
+	    mostraTempo.setEditable(false);
+	    jpanel.add(mostraTempo, gridBagConstraints);
+	    gridBagConstraints.gridy++;
+	    dataEscolhidaJLabel.setPreferredSize(new Dimension(200, 25));
+	    jpanel.add(dataEscolhidaJLabel, gridBagConstraints);
+	    dataEscolhidaField.setPreferredSize(new Dimension(200, 25));
+	    dataEscolhidaField.addFocusListener(focusAdapter);
+	    gridBagConstraints.gridy++;
+	    jpanel.add(dataEscolhidaField, gridBagConstraints);
+	    gridBagConstraints.gridy++;
+	    dataCalculadaJLabel.setPreferredSize(new Dimension(200, 25));
+	    jpanel.add(dataCalculadaJLabel, gridBagConstraints);
+	    mostraDataCalculada.setPreferredSize(new Dimension(200, 25));
+	    gridBagConstraints.gridy++;
+	    mostraDataCalculada.setEditable(false);
+	    jpanel.add(mostraDataCalculada, gridBagConstraints);
+	    gridBagConstraints.gridy++;
+	    gridBagConstraints.gridwidth = 1;
+	    jButton.addActionListener(acaoBotao);
+	    jButton.setPreferredSize(new Dimension(92, 25));
+	    gridBagConstraints.gridy++;
+	    jpanel.add(jButton, gridBagConstraints);
+	    jButton.addActionListener(new ActionListener() {
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            thread1Time = new Thread(thread1);
+	            thread1Time.start();
+	            try {
+	                if (dataEscolhidaField.getText().trim().isEmpty()) {
+	                    JOptionPane.showMessageDialog(jpanel, "Data não informada", "Erro", JOptionPane.ERROR_MESSAGE);
+	                    return;
+	                }
+	                String datasemformatacao = dataEscolhidaField.getText();
+	                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	                dateFormat.setLenient(false);
+	                Date dataEscolhida = dateFormat.parse(datasemformatacao);
+	                String dataFormatada = dateFormat.format(dataEscolhida);
+	                dataEscolhidaField.setText(dataFormatada);
+	            } catch (ParseException ex) {
+	                JOptionPane.showMessageDialog(jpanel, "Data inválida", "Erro", JOptionPane.ERROR_MESSAGE);
+	            }
+	        }
+	    });
+	    
+	    add(jpanel, BorderLayout.WEST);
+	    setVisible(true);
 	}
 }
