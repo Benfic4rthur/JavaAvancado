@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.UIManager;
 
-public class Executavel {
+public class LoginValido {
 	public static void main(String[] args) {
 		UIManager.put("Button.defaultButtonFollowsFocus", Boolean.TRUE);
 		String login = JOptionPane.showInputDialog("Digite seu login:");
