@@ -19,7 +19,7 @@ public class ApachePoi {
 public static void main(String[] args) throws IOException {
 	
 			//caminho do arquivo
-			File arquivo = new File("C:\\Users\\Arthur Benfica\\git\\AulasAvancadas\\AulasAvancadas\\src\\trabalhandoComApachePoi\\arquivo_excel.xls");
+			File arquivo = new File("C:\\workspace-java\\AulasJavaAvancadas\\src\\trabalhandoComApachePoi\\arquivo_excel.xls");
 			//se arquivo não existe
 			if (!arquivo.exists()) {
 				//cria um arquivo
